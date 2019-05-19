@@ -4,5 +4,10 @@ var Path = require('path');
 var people = require('../data/friends.js');
 
 module.exports = function (app) {
+    // GRAB THE PEOPLE LIST
+    app.get('/api/friends', function (req, res) {
+        res.json(people);
+    });
+
     
 };
