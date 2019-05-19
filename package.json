@@ -1,0 +1,27 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "An App to find you the best of friends based on answers you give to our questions.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kbub27/FriendFinder.git"
+  },
+  "keywords": [
+    "Friend",
+    "Finder"
+  ],
+  "author": "Kaleb Merriman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kbub27/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/kbub27/FriendFinder#readme",
+  "dependencies": {
+    "express": "^4.17.0"
+  }
+}
