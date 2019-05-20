@@ -45,23 +45,25 @@
         <!-- JUMBOTRON -->
         <div class="jumbotron jumbotron-fluid text-center">
             <div class="container">
-                <h1 class="display-4">Let's get some of your information.</h1>
+                <h1 class="display-4">Let's get some of your Info.</h1>
             </div>
         </div>
         <!-- FORM FOR ALL THE USER INPUT ANSWERS -->
         <form class='was-validated'>
-            <div class="form-group">
-                <label for="userName">Please Enter your Name.</label>
-                <input class="form-control" id="userName" type="text" placeholder="Full Name" required>
-            </div>
-            <div class="form-group">
-                <label for="userImage">Please select a picture of yourself!</label>
-                <input type="file" class="form-control-file" id="userImage">
+            <div class="row">
+                <div class="form-group col-sm-6 col-12">
+                    <label for="userName">Please Enter your Name.</label>
+                    <input class="form-control" id="userName" type="text" placeholder="Full Name" required>
+                </div>
+                <div class="form-group col-sm-6 col-12">
+                    <label for="userImage">Please select a picture of yourself!</label>
+                    <input type="file" class="form-control-file" id="userImage">
+                </div>
             </div>
             <div class="form-group">
                 <h3>Question goes here!</h3>
-                <select class="custom-select" required>
-                    <option value="">Open this select menu</option>
+                <select class="custom-select" id="q1" required>
+                    <option value="" disabled selected>Open this select menu</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -72,8 +74,8 @@
             </div>
             <div class="form-group">
                 <h3>Question goes here!</h3>
-                <select class="custom-select" required>
-                    <option value="">Open this select menu</option>
+                <select class="custom-select" id="q2" required>
+                    <option value="" disabled selected>Open this select menu</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -84,8 +86,8 @@
             </div>
             <div class="form-group">
                 <h3>Question goes here!</h3>
-                <select class="custom-select" required>
-                    <option value="">Open this select menu</option>
+                <select class="custom-select" id="q3" required>
+                    <option value="" disabled selected>Open this select menu</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -96,8 +98,8 @@
             </div>
             <div class="form-group">
                 <h3>Question goes here!</h3>
-                <select class="custom-select" required>
-                    <option value="">Open this select menu</option>
+                <select class="custom-select" id="q4" required>
+                    <option value="" disabled selected>Open this select menu</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -108,8 +110,8 @@
             </div>
             <div class="form-group">
                 <h3>Question goes here!</h3>
-                <select class="custom-select" required>
-                    <option value="">Open this select menu</option>
+                <select class="custom-select" id="q5" required>
+                    <option value="" disabled selected>Open this select menu</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -120,8 +122,8 @@
             </div>
             <div class="form-group">
                 <h3>Question goes here!</h3>
-                <select class="custom-select" required>
-                    <option value="">Open this select menu</option>
+                <select class="custom-select" id="q6" required>
+                    <option value="" disabled selected>Open this select menu</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -132,8 +134,8 @@
             </div>
             <div class="form-group">
                 <h3>Question goes here!</h3>
-                <select class="custom-select" required>
-                    <option value="">Open this select menu</option>
+                <select class="custom-select" id="q7" required>
+                    <option value="" disabled selected>Open this select menu</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -144,8 +146,8 @@
             </div>
             <div class="form-group">
                 <h3>Question goes here!</h3>
-                <select class="custom-select" required>
-                    <option value="">Open this select menu</option>
+                <select class="custom-select" id="q8" required>
+                    <option value="" disabled selected>Open this select menu</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -156,8 +158,8 @@
             </div>
             <div class="form-group">
                 <h3>Question goes here!</h3>
-                <select class="custom-select" required>
-                    <option value="">Open this select menu</option>
+                <select class="custom-select" id="q9" required>
+                    <option value="" disabled selected>Open this select menu</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -168,8 +170,8 @@
             </div>
             <div class="form-group">
                 <h3>Question goes here!</h3>
-                <select class="custom-select" required>
-                    <option value="">Open this select menu</option>
+                <select class="custom-select" id="q10" required>
+                    <option value="" disabled selected>Open this select menu</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
@@ -177,6 +179,11 @@
                     <option value="5">Five</option>
                 </select>
                 <div class="invalid-feedback">You Must Make A Choice!</div>
+            </div>
+            <div class="form-group justify-content-center">
+                <label for="submit">Click here to submit your answers.</label>
+                <br>
+                <button type="button" class="btn btn-outline-success" id="submit">Submit</button>
             </div>
         </form>
     </div>
