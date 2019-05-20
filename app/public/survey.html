@@ -9,6 +9,12 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <title>FriendFinder</title>
 </head>
 
@@ -29,15 +35,30 @@
                     <a class="nav-link" href="/api/friendslist" target="_blank">Friends List</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/kbub27/FriendFinder" target="_blank">GitHub Repository</a>
+                    <a class="nav-link" href="https://github.com/kbub27/FriendFinder" target="_blank">GitHub
+                        Repository</a>
                 </li>
             </ul>
         </div>
     </nav>
 
     <div class="container">
+        <!-- JUMBOTRON -->
+        <div class="jumbotron jumbotron-fluid text-center">
+            <div class="container">
+                <h1 class="display-4">Let's get some of your information.</h1>
+            </div>
+        </div>
         <!-- FORM FOR ALL THE USER INPUT ANSWERS -->
         <form class='was-validated'>
+            <div class="form-group">
+                <label for="userName">Please Enter your Name.</label>
+                <input class="form-control" id="userName" type="text" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+                <label for="userImage">Please select a picture of yourself!</label>
+                <input type="file" class="form-control-file" id="userImage">
+            </div>
             <div class="form-group">
                 <h3>Question goes here!</h3>
                 <select class="custom-select" required>
