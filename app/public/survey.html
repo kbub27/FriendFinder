@@ -205,6 +205,8 @@
                 <div class="modal-body">
                     <h5 id="newFriend"></h5>
                     <img id="newFriendImage" class="" width="650" src="">
+                    <br>
+                    <p>Say hello to your new friend!</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -221,22 +223,28 @@
             $('#submit').click(function (event) {
                 event.preventDefault();
                 // GET USER INPUTS
-                var userInput = {
-                    name: $('#userName').val().trim(),
-                    photo: $('#userImage').val().trim(),
-                    scores: [
-                        $('#q1').val().trim(),
-                        $('#q2').val().trim(),
-                        $('#q3').val().trim(),
-                        $('#q4').val().trim(),
-                        $('#q5').val().trim(),
-                        $('#q6').val().trim(),
-                        $('#q7').val().trim(),
-                        $('#q8').val().trim(),
-                        $('#q9').val().trim(),
-                        $('#q10').val().trim()
-                    ]
-                };
+                var userInput = 
+                    {
+                        name: $('#userName').val().trim(),
+                        photo: $('#userImage').val().trim(),
+                        scores: [
+                            $('#q1').val().trim(),
+                            $('#q2').val().trim(),
+                            $('#q3').val().trim(),
+                            $('#q4').val().trim(),
+                            $('#q5').val().trim(),
+                            $('#q6').val().trim(),
+                            $('#q7').val().trim(),
+                            $('#q8').val().trim(),
+                            $('#q9').val().trim(),
+                            $('#q10').val().trim()
+                        ]
+                    };
+
+                console.log(userInput);
+                $.post('/api/friendslist', userInput).then(data => {
+                    console.log(data.name)
+                })
                 $('#bestFriendModal').modal('toggle');
             });
         });
