@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -204,7 +204,7 @@
                 </div>
                 <div class="modal-body">
                     <h5 id="newFriend"></h5>
-                    <img id="newFriendImage" class="" width="650" src="">
+                    <img id="newFriendImage" class="" width="100%" src="">
                     <P class="friendDifference"></P>
                     <br>
                     <p class="text-center">Say hello to your new friend!</p>
@@ -217,38 +217,42 @@
     </div>
     <!-- SET UP SCRIPTS TO GRAB USER DATA HERE -->
     <script type="text/javascript">
-    
+
         $(document).ready(function () {
             //$('#bestFriendModal').modal('toggle');
             //ON CLICK EVENT HANDLER FOR THE SUBMIT BUTTON
             $('#submit').click(function (event) {
                 event.preventDefault();
                 // GET USER INPUTS
-                var userInput = 
-                    {
-                        name: $('#userName').val().trim(),
-                        photo: $('#userImage').val().trim(),
-                        scores: [
-                            $('#q1').val().trim(),
-                            $('#q2').val().trim(),
-                            $('#q3').val().trim(),
-                            $('#q4').val().trim(),
-                            $('#q5').val().trim(),
-                            $('#q6').val().trim(),
-                            $('#q7').val().trim(),
-                            $('#q8').val().trim(),
-                            $('#q9').val().trim(),
-                            $('#q10').val().trim()
-                        ]
-                    };
+                var userInput =
+                {
+                    name: $('#userName').val().trim(),
+                    photo: $('#userImage').val().trim(),
+                    scores: [
+                        $('#q1').val().trim(),
+                        $('#q2').val().trim(),
+                        $('#q3').val().trim(),
+                        $('#q4').val().trim(),
+                        $('#q5').val().trim(),
+                        $('#q6').val().trim(),
+                        $('#q7').val().trim(),
+                        $('#q8').val().trim(),
+                        $('#q9').val().trim(),
+                        $('#q10').val().trim()
+                    ]
+                };
 
                 $.post('/api/friendslist', userInput).then(data => {
                     console.log(data)
                     $('#newFriend').text(data.friendName);
                     $('#newFriendImage').attr('src', data.friendImage)
-                    $('#friendDifference').text('You matched with a score of '+ data.friendDifference);
+                    $('#friendDifference').text('You matched with a score of ' + data.friendDifference);
                     $('#bestFriendModal').modal('toggle');
-                })
+                });
+            });
+            //ON CLICK TO REDIRECT PAGE AFTER MODAL CLOSE
+            $('#bestFriendModal').on('hidden.bs.modal', function (e) {
+                window.location.href = '/';
             });
         });
     </script>
